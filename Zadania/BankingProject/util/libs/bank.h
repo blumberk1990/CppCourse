@@ -14,15 +14,15 @@
     class Bank
     {
     private:
-        
+        map<long, Account*> accounts;
     public:
-    map<long, Account*> accounts;
+    
         Bank();
-        Account* openAccount(string firstName, string lastName, float balance);
-        Account* balanceEnquiry(long accountNumber);
-        Account* deposit(long accountNumber, float ammount);
-        Account* withdraw(long accountNumber, float ammount);
-        void closeAccount(long accountNumber, float ammount);
+        Account* const openAccount(string firstName, string lastName, float balance);
+        Account* const balanceEnquiry(long accountNumber);
+        Account* const deposit(long accountNumber, float ammount);
+        Account* const withdraw(long accountNumber, float ammount);
+        void closeAccount(long accountNumber);
         void showAllAccount();
         ~Bank();
     };
