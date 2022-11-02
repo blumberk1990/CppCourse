@@ -14,10 +14,6 @@ struct HtmlElement
     std::vector<HtmlElement> elements;
     const size_t indent_size = 2;
 
-    HtmlElement() {};
-    HtmlElement(const std::string & name, const std::string& text) 
-                : name(name), text(text) {};
-    
     std::string str(int indent = 0) const {
         std::ostringstream oss;
         std::string i(indent_size*indent, ' ');
@@ -50,10 +46,16 @@ struct HtmlBuilder
      * @return HtmlBuilder& returning reference gve us possibility to work in chain.
      *         What is called fluent interface.
      */
-    HtmlBuilder& _addChild(std::string childName, std::string childText) {
+    HtmlBuilder& _addChildRef(std::string childName, std::string childText) {
         HtmlElement element{childName, childText};
         root.elements.emplace_back(element);
         return *this;
+    }
+
+    HtmlBuilder* _addChildPtr(std::string childName, std::string childText) {
+        HtmlElement element{childName, childText};
+        root.elements.emplace_back(element);
+        return this;
     }
     std::string str() { return root.str(); }
 };
@@ -83,13 +85,18 @@ int main()
     std::cout << "\nPerform test 3. Implement simple builder." << std::endl;
     HtmlBuilder builder{ "ul" };
     for (auto word: words) {
-        builder._addChild("li", word);
+        builder._addChildRef("li", word);
     }
     std::cout << builder.str() << std::endl;
 
-    std::cout << "\nPerform test 4. Implement fluent interface." << std::endl;
-    HtmlBuilder builder{ "ul" };
-    builder._addChild("li", words[0])._addChild("li", words[1]);
+    std::cout << "\nPerform test 4. Implement fluent interface with usage of reference." << std::endl;
+    HtmlBuilder builder2{ "ul" };
+    builder2._addChildRef("li", words[0])._addChildRef("li", words[1]);
+    std::cout << builder.str() << std::endl;
+
+    std::cout << "\nPerform test 5. Implement fluent interface with usage of ptr." << std::endl;
+    HtmlBuilder* builder3 = new HtmlBuilder{ "ul" };
+    builder3->_addChildPtr("li", words[0])->_addChildPtr("li", words[1]);
     std::cout << builder.str() << std::endl;
 
 }
