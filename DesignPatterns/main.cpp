@@ -43,14 +43,17 @@ struct HtmlBuilder
     
     HtmlBuilder(std::string rootName) { root.name = rootName; }
     /**
-     * @brief  Method is dedicated to inserting child element of the root html element.
+     * @brief  Method is dedicated for inserting child element of the root html element.
      * 
      * @param childName 
      * @param childText 
+     * @return HtmlBuilder& returning reference gve us possibility to work in chain.
+     *         What is called fluent interface.
      */
-    void _addChild(std::string childName, std::string childText) {
+    HtmlBuilder& _addChild(std::string childName, std::string childText) {
         HtmlElement element{childName, childText};
         root.elements.emplace_back(element);
+        return *this;
     }
     std::string str() { return root.str(); }
 };
@@ -82,6 +85,11 @@ int main()
     for (auto word: words) {
         builder._addChild("li", word);
     }
+    std::cout << builder.str() << std::endl;
+
+    std::cout << "\nPerform test 4. Implement fluent interface." << std::endl;
+    HtmlBuilder builder{ "ul" };
+    builder._addChild("li", words[0])._addChild("li", words[1]);
     std::cout << builder.str() << std::endl;
 
 }
