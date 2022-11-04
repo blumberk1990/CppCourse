@@ -1,2 +1,0 @@
-/usr/bin/ar qc libmyLibrary.a  CMakeFiles/myLibrary.dir/src/PersonBuilder.cpp.o CMakeFiles/myLibrary.dir/src/PersonPersonalBuilder.cpp.o CMakeFiles/myLibrary.dir/src/PersonAddressBuilder.cpp.o CMakeFiles/myLibrary.dir/src/PersonEmploymentBuilder.cpp.o
-/usr/bin/ranlib libmyLibrary.a
