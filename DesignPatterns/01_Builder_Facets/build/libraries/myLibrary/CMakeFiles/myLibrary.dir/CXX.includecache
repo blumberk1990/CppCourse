@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../libraries/myLibrary/src/PersonBuilder.h
+models/src/Person.h
+-
+
+../src/external/models/src/Person.h
+iostream
+-
+string
+-
+fstream
+-
+sstream
+-
+vector
+-
+memory
+-
+
+/home/users/magdah1/mainfileshubi/CppCourse/DesignPatterns/01_Builder_Facets/src/external/models/src/Person.cpp
+Person.h
+/home/users/magdah1/mainfileshubi/CppCourse/DesignPatterns/01_Builder_Facets/src/external/models/src/Person.h
+PersonBuilder.h
+/home/users/magdah1/mainfileshubi/CppCourse/DesignPatterns/01_Builder_Facets/src/external/models/src/PersonBuilder.h
+
+/home/users/magdah1/mainfileshubi/CppCourse/DesignPatterns/01_Builder_Facets/src/external/models/src/Person.h
+iostream
+-
+string
+-
+fstream
+-
+sstream
+-
+vector
+-
+memory
+-
+

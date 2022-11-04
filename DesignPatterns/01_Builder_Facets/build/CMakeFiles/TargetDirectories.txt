@@ -1,0 +1,6 @@
+/home/users/magdah1/mainfileshubi/CppCourse/DesignPatterns/01_Builder_Facets/build/CMakeFiles/edit_cache.dir
+/home/users/magdah1/mainfileshubi/CppCourse/DesignPatterns/01_Builder_Facets/build/CMakeFiles/rebuild_cache.dir
+/home/users/magdah1/mainfileshubi/CppCourse/DesignPatterns/01_Builder_Facets/build/CMakeFiles/01_Builder_Facets.dir
+/home/users/magdah1/mainfileshubi/CppCourse/DesignPatterns/01_Builder_Facets/build/libraries/myLibrary/CMakeFiles/rebuild_cache.dir
+/home/users/magdah1/mainfileshubi/CppCourse/DesignPatterns/01_Builder_Facets/build/libraries/myLibrary/CMakeFiles/edit_cache.dir
+/home/users/magdah1/mainfileshubi/CppCourse/DesignPatterns/01_Builder_Facets/build/libraries/myLibrary/CMakeFiles/myLibrary.dir
