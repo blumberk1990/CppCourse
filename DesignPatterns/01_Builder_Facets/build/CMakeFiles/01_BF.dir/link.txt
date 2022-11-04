@@ -1,1 +1,0 @@
-/usr/bin/c++    -rdynamic CMakeFiles/01_BF.dir/src/main.cpp.o  -o 01_BF  libraries/myLibrary/libmyLibrary.a 

@@ -1,1 +1,0 @@
-/usr/bin/c++    -rdynamic CMakeFiles/01_Builder_Facets.dir/src/main.cpp.o  -o 01_Builder_Facets  libraries/myLibrary/libmyLibrary.a 
