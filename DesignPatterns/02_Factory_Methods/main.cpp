@@ -16,10 +16,16 @@ class Point
             return {x, y};
         }
         static Point NewPolar(float r, float theta) {
-            return {r * std::cos(theta), r * std::sin(theta)};
+            return { r * std::cos(theta), r * std::sin(theta) };
         }
         friend std::ostream& operator<<(std::ostream& os, const Point& obj) {
-            return os << "(" << obj.x << "," << obj.y << ")" << std::endl;
+            return os 
+                    << "(" 
+                    << obj.x 
+                    << "," 
+                    << obj.y 
+                    << ")" 
+                    << std::endl;
         }
 };
 
@@ -27,6 +33,8 @@ int main()
 {
     auto pointCart = Point::NewCartesian(5, 4);
     std::cout << pointCart;
+    auto pointPolar = Point::NewPolar(5, M_PI_4);
+    std::cout << pointPolar;
 
     return 0;
 }
