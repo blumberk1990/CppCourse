@@ -5,6 +5,9 @@ project(02_Factory_abstract)
 
 set(SOURCES src/main.cpp 
             src/Coffee.cpp
-            src/Tea.cpp)
+            src/CoffeeFactory.cpp
+            src/DrinkFactory.cpp
+            src/Tea.cpp
+            src/TeaFactory.cpp)
 
 add_executable(02_Factory_abstract ${SOURCES})
