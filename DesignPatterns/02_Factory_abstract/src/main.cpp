@@ -63,5 +63,17 @@ int main()
     makedDrink = drinkFactory.makeDrink("coffee");
     makedDrink->prepare(455);
 
+    std::cout << "------------------------------------------------------" << std::endl;
+    std::cout << "7 test" << std::endl;
+    DrinkWithVolumeFactory lambdaDrinkFactory;
+
+    makedDrink = lambdaDrinkFactory.makeDrink("tea");
+
+    std::cout << "------------------------------------------------------" << std::endl;
+    std::cout << "8 test" << std::endl;
+
+    makedDrink = lambdaDrinkFactory.makeDrink("coffee");
+    
+
 
 }
