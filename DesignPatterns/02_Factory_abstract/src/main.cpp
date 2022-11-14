@@ -61,6 +61,7 @@ int main()
     std::cout << "6 test" << std::endl;
 
     makedDrink = drinkFactory.makeDrink("coffee");
+    makedDrink->prepare(455);
 
 
 }
