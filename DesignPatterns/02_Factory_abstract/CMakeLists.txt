@@ -10,4 +10,5 @@ set(SOURCES src/main.cpp
             src/Tea.cpp
             src/TeaFactory.cpp)
 
+add_subdirectory(tests)
 add_executable(02_Factory_abstract ${SOURCES})
