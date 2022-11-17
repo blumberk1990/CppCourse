@@ -15,13 +15,13 @@ std::unique_ptr<HotDrink> DrinkFactory::makeDrink(const std::string& name)
 
 DrinkWithVolumeFactory::DrinkWithVolumeFactory()
 {
-    // lambda function body invoked lambda function
+    // lambda function body, invoked lambda function
     hotDrinkFactories["tea"] = [] {
         auto drink = std::make_unique<Tea>();
         drink->prepare(275);
         return drink;
     };
-    // lambda function body invoked lambda function
+    // lambda function body, invoked lambda function
     hotDrinkFactories["coffee"] = [] {
         auto drink = std::make_unique<Coffee>();
         drink->prepare(275);
