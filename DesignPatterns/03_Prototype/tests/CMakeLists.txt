@@ -5,10 +5,10 @@ find_package(GTest REQUIRED)
 message("GTest_INCLUDE_DIRS = ${GTEST_INCLUDE_DIRS}")
 #set(GMOCK_LIBRARIES /usr/lib/libgmock.a /usr/lib/libgmock_main.a)
 
-#add_library(commonLibrary )
+add_library(commonLibrary ../src/ContactFactory.cpp)
 
 add_executable(testRunner src/testRunner.cpp)
-target_link_libraries(testRunner #commonLibrary 
+target_link_libraries(testRunner commonLibrary 
                                  ${GTEST_LIBRARIES} 
                                  ${GMOCK_LIBRARIES}
                                  pthread)

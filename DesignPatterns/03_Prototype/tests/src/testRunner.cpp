@@ -3,8 +3,13 @@
 #include <gtest/gtest.h>
 
 #include "../../src/Contact.hpp"
+#include "../../src/ContactFactory.hpp"
 
 class ContactFixture : public testing::Test {
+
+};
+
+class ContactFactoryFixture : public testing::Test {
 
 };
 
@@ -38,6 +43,20 @@ TEST_F(ContactFixture, SimplePrototypeCopyConstructorTest) {
 	mietek.address->room = 77;
 	ASSERT_EQ(77, mietek.address->room);
 	std::cout << "Contact object created via copy constructor, is fine." << mietek.address->room << std::endl;
+}
+
+TEST_F(ContactFactoryFixture, SimplePrototypeHqFactoryTest) {
+	auto wiktor = ContactFacotry::newHqContact("Wiktor", "Janiak", 111);
+	ASSERT_EQ("Polanki 1", wiktor->address->street);
+	ASSERT_EQ("Gdynia", wiktor->address->city);
+	std::cout << "Contact object created via ContactFactory, is fine.\n" << *wiktor << std::endl;
+}
+
+TEST_F(ContactFactoryFixture, SimplePrototypePoznanHqFactoryTest) {
+	auto robert = ContactFacotry::newPoznanHqContact("Robert", "Janiak", 112);
+	ASSERT_EQ("Hawelansk 6", robert->address->street);
+	ASSERT_EQ("Poznan", robert->address->city);
+	std::cout << "Contact object created via ContactFactory, is fine.\n" << *robert << std::endl;
 }
 
 int main(int argc, char **argv)
