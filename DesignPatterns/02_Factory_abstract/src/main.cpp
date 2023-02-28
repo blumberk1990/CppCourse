@@ -23,8 +23,6 @@ std::unique_ptr<HotDrink> makeDrink(std::string type)
     return drink;
 }
 
-
-
 int main()
 {
     std::cout << "------------------------------------------------------" << std::endl;
