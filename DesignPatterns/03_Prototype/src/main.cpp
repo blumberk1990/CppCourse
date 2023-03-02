@@ -1,7 +1,11 @@
 #include <memory>
 #include "Contact.hpp"
 #include "ContactFactory.hpp"
+#include <iostream>
 
+#include <boost/serialization/serialization.hpp>
+#include <boost/archive/text_iarchive.hpp>
+#include <boost/archive/text_oarchive.hpp>
 
 int main()
 {
@@ -24,5 +28,26 @@ int main()
     auto robert = ContactFacotry::newPoznanHqContact("Robert", "Janiak", 112);
     std::cout<< *wiktor << std::endl;
     std::cout<< *robert << std::endl;
+
+
+    auto clone = [](const Contact& contact)
+    {
+        std::ostringstream oss;
+        boost::archive::text_oarchive oa(oss);
+        oa << contact;
+        std::string s = oss.str();
+        std::cout << s <<std::endl;
+
+        std::istringstream iss(s);
+        boost::archive::text_iarchive ia(iss);
+        Contact deserializeContact;
+        ia >> deserializeContact;
+        return deserializeContact;
+    };
+    auto marian     = ContactFacotry::newPoznanHqContact("Marian", "Nowak", 753);
+    auto marianna   = clone(*marian);
+    marianna.name = "Marianna";
+    std::cout << *marian << std::endl;
+    std::cout << marianna << std::endl;
     
 }
